@@ -44,6 +44,7 @@ margin-top:20px;
     fill: #fff;
 }
 
+
 /* Reposition the music note icon */
 .icon-music {
   right: 2px;
@@ -72,11 +73,81 @@ float:right;
 .border-img{
 	 border: 1px solid gray;
 }
-.below-img{
-height:50px;
-width:100%;
-border: 1px solid #e1e4e8!important;
-padding:15px;
-min-width: 50px;
-width: 72%;
+
+
+
+
+
+.input-header {
+    background: none;
+    border: 0;
+    box-shadow: none;
+    color: inherit;
+    display: table-cell;
+    font-size: inherit;
+    padding-bottom: 0;
+    padding-top: 0;
+    width: 50%;
 }
+.navbar-dark .navbar-nav .nav-link  {
+    color: #fff;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.profile-img {
+    overflow: hidden;
+    max-width: 17rem;
+}
+.below-img {
+    height:50px;
+    border: 1px solid #e1e4e8!important;
+    padding: 0.8rem;
+}
+
+.user-name {
+    color: #666;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 24px;
+}
+
+.btn-edit {
+    background-color: #eff3f6;
+    background-image: linear-gradient(-180deg,#fafbfc,#eff3f6 90%);
+    color: #24292e;
+    border: 1px solid rgba(27,31,35,.2);
+    border-radius: .25em;
+}
+
+.list-data {
+    list-style: none;
+}
+
+.fa-bars {
+    display: none;
+}
+
+.rounded {
+    border-radius: 0.25rem 0.25rem 0 0 !important;
+}
+
+
+@media only screen and (min-width: 800px) {
+  
+    .margin-minus {
+        margin-left: -3%;"
+    }
+}
+
+@media only screen and (max-width: 800px) {
+  
+    .brand-logo {
+        position: absolute;
+        top: 0rem;
+        left: 45%;
+    }
+}
+
+    
