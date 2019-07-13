@@ -1,0 +1,82 @@
+.f6 {
+    font-size: 12px!important;
+	margin-top: 20px !important;
+}
+.d-inline-block {
+    display: inline-block!important;
+}
+
+.mr-3 {
+    margin-right: 16px!important;
+}
+.repo-language-color {
+    border-radius: 50%;
+    display: inline-block;
+    height: 12px;
+    position: relative;
+    top: 1px;
+    width: 12px;
+}
+.text-gray {
+    color: #586069!important;
+}
+.sectionnew{
+	width:50%;
+	margin-top:5px;
+}
+.button{
+    width: 50%;
+  
+}
+a {
+    color: #202223;
+    text-decoration: none;
+}
+.maintain-top{
+margin-top:20px;
+}
+[class^="icon"] {
+    width: 15px;
+    height: 15px;
+    position: relative;
+    /* top: 15px; */
+    margin-right: 10px;
+    fill: #fff;
+}
+
+/* Reposition the music note icon */
+.icon-music {
+  right: 2px;
+}
+.link-col{
+color:blue;
+}
+a.active {
+  border-bottom: 3px solid red;
+}
+.hr-line{
+	margin-top: 35px;
+    border-bottom: 1px solid #dee2e6;
+}
+.flot{
+float:right;
+}
+
+.border {
+    display: inline-block;
+    width: 100%;
+    height: 100px;
+    margin: 6px;
+	padding: 10px;
+}
+.border-img{
+	 border: 1px solid gray;
+}
+.below-img{
+height:50px;
+width:100%;
+border: 1px solid #e1e4e8!important;
+padding:15px;
+min-width: 50px;
+width: 72%;
+}
