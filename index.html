@@ -3,235 +3,219 @@
     <head>
         <title>My Profile</title>
         <meta charset="utf-8">
-    	<meta name="viewport" content="width=device-width, initial-scale=1">
-	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-	   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
         <link rel="stylesheet" href="./styles/stylehome.css"  >
     </head>
     <body>
 
-    	<div class="main">
-    		<div class="header">
-    			<nav style="background: #24292e" class="navbar navbar-expand-md navbar-dark">
-					
-				  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-				    <span class="navbar-toggler-icon"></span>
-				  </button>
-				  <a class="navbar-brand" href="#">
-			  		<img src="img/gitlogo.png" class="brand-logo" width="50">
-			  	  </a>
-				  <div class="collapse navbar-collapse" id="collapsibleNavbar">
-				    <ul class="navbar-nav">
-				      <li class="nav-item">
-				      	<a class="nav-link">
-					      	 <input type="text" style="width:20rem;" class="input-header form-control-sm bg-dark" placeholder="Search or jump to" >
-						</a>
-				      </li>
-				      <li class="nav-item">
-				        <a class="nav-link" href="#">Pull requests</a>
-				      </li>
-				      <li class="nav-item">
-				        <a class="nav-link" href="#">Issues</a>
-				      </li>
-				      <li class="nav-item">
-				        <a class="nav-link" href="#">Marketplace</a>
-				      </li> 
-				      <li class="nav-item">
-				        <a class="nav-link" href="#">Explore</a>
-				      </li>    
-				    </ul>
-				  </div>  
-				</nav>
-    		</div>
-    		<div style="margin: 0;" class="row">
+        <div class="main">
+            <div class="header">
+                <nav style="background: #24292e" class="navbar navbar-expand-md navbar-dark">
 
-    			<div class="col-md-4 mr-0 ml-4">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">
+                        <img src="img/gitlogo.png" class="brand-logo" width="50">
+                    </a>
+                    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link">
+                                    <input type="text" style="width:20rem;" class="input-header form-control-sm bg-dark" placeholder="Search or jump to" >
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Pull requests</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Issues</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Marketplace</a>
+                            </li> 
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Explore</a>
+                            </li>    
+                        </ul>
+                    </div>  
+                </nav>
+            </div>
+            <div style="margin: 0;" class="row">
 
-    				<div class="profile-img m-4">
-    					<img id="profileImage" src="img/images.jpg" width="270" height="270" class="rounded" alt="Cinque Terre">
+                <div class="col-md-4 mr-0 ml-4">
+
+                    <div class="profile-img m-4">
+                        <img id="profileImage" src="" width="270" height="270" class="rounded" alt="Cinque Terre">
                         <div class="below-img">
-                        	<i class="far fa-smile"></i> Set status
+                            <i class="far fa-smile"></i> Set status
                         </div>
                         <div class="profile-name mt-3 mb-3">
-	    					<span class="user-name" id="profileName"></span>
-	    					<br>
-	    					<span class="user-name" id="profileUserName"></span>
-	    				</div>
-	    				<div class="edit-profile mt-4 mb-3">
-		                    <button type="button" class="form-control btn btn-edit">Edit Profile </button>
-		                    <div class="user-details mt-4">
-		                    	<div class="mb-2">
-		                    		<i class="fa fa-user" aria-hidden="true"></i> <span id="bio"></span>
-		                    	</div>
-								<div class="mb-2">
-									<i class="fa fa-map-marker" aria-hidden="true"></i> <span id="location"></span>
-								</div>		    
-		                        <div class="mb-2">
-		                        	<i class="fa fa-envelope" aria-hidden="true"></i> <span class="link-col" id="email"></span>
-		                        </div>
-		                        <div class="mb-2">
-		                        	<i class="fab fa-github" aria-hidden="true" ></i> <span class="link-col" id="blog"></span>
-		                        </div>
-		                    </div>
-	    				</div>
-    				</div>
-
-    			</div>
-
-    			<div class="col-md-8 margin-minus">
-
-    				<div class="nav-menu mt-3 mb-4">
-
-						<ul class="nav hr-line">	
-		                    <li class="nav-item">
-		                        <a class="nav-link active" href="#" ><b>Overview</b></a>
-		                    </li>
-		                    <li class="nav-item">
-		                        <a class="nav-link" href="#">Repositiries <span class="badge" id="repoCount"></span></a></a>
-
-		                    </li>
-		                    <li class="nav-item">
-		                        <a class="nav-link" href="#">Project <span class="badge" id="projectCount"></span></a></a>
-		                    </li>
-		                    <li class="nav-item">
-		                        <a class="nav-link" href="#">Stars <span class="badge" id="starCount"></span></a></a>
-		                    </li>
-		                    <li class="nav-item">
-		                        <a class="nav-link" href="#">Followers <span class="badge" id="followersCount"></span></a></a>
-		                    </li>
-		                    <li class="nav-item">
-		                        <a class="nav-link" href="#">Following <span class="badge" id="followingCount"></span></a></a>
-		                    </li>
-                    	</ul>
+                            <span class="user-name" id="profileName"></span>
+                            <br>
+                            <span class="user-name" id="profileUserName"></span>
+                        </div>
+                        <div class="edit-profile mt-4 mb-3">
+                            <button type="button" class="form-control btn btn-edit">Edit Profile </button>
+                            <div class="user-details mt-4">
+                                <div class="mb-2">
+                                    <i class="fa fa-user" aria-hidden="true"></i> <span id="bio"></span>
+                                </div>
+                                <div class="mb-2">
+                                    <i class="fa fa-map-marker" aria-hidden="true"></i> <span id="location"></span>
+                                </div>		    
+                                <div class="mb-2">
+                                    <i class="fa fa-envelope" aria-hidden="true"></i> <span class="link-col" id="email"></span>
+                                </div>
+                                <div class="mb-2">
+                                    <i class="fab fa-github" aria-hidden="true" ></i> <span class="link-col" id="blog"></span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-        
+                </div>
+
+                <div class="col-md-8 margin-minus">
+
+                    <div class="nav-menu mt-3 mb-4">
+
+                        <ul class="nav hr-line">	
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#" ><b>Overview</b></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Repositiries <span class="badge" id="repoCount"></span></a></a>
+
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Project <span class="badge" id="projectCount"></span></a></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Stars <span class="badge" id="starCount"></span></a></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Followers <span class="badge" id="followersCount"></span></a></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Following <span class="badge" id="followingCount"></span></a></a>
+                            </li>
+                        </ul>
+                    </div>
+
+
                     <div class="boxes mt-4">
-	                    <div class="">
-		                    <span>Pinned</span>
-		                    <span class="flot">Custmize your pins</span>
-	                    </div>
-	                    <div class="">
-	                        <div class="row" id="repoDataDiv">
-	                        </div>
-	                    </div>
-	                </div>
+                        <div class="">
+                            <span>Pinned</span>
+                            <span class="flot">Custmize your pins</span>
+                        </div>
+                        <div class="">
+                            <div class="row" id="repoDataDiv">
+                            </div>
+                        </div>
+                    </div>
 
-    			</div>
-    		</div>
-    	</div>
-  
-       
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+<script type="text/javascript">
+    $(document).ready(function () {
+        loadProfileData();
+    });
 
-                   
-                    
-                                        </body>
-                                        </html>
-                                        <script type="text/javascript">
-                                            $(document).ready(function () {
-                                                loadProfileData();
-                                            });
-
-                                            function ajaxCall(url, type, dataType, data) {
-                                                var responseData = {};
-                                                $.ajax({
-                                                    url: url,
-                                                    type: type,
-                                                    dataType: dataType,
-                                                    async: false,
-                                                    data: data,
-                                                    success: function (responseJson) {
-                                                        responseData = responseJson;
-                                                    }
-                                                });
-                                                return responseData;
-                                            }
-                                            function loadProfileData() {
-                                                var url = "https://api.github.com/users/dheerajtiwari";
-                                                var data = "";
-                                                var response = ajaxCall(url, "GET", "json", data);
-                                                console.log(response);
-                                                if (response) {
-                                                    var profilePic = response.avatar_url;
-                                                    var profileName = response.name;
-                                                    var profileUserName = response.login;
-                                                    var bio = response.bio;
-                                                    var company = response.company;
-                                                    var location = response.location;
-                                                    var email = response.email;
-                                                    var followers = response.followers;
-                                                    var following = response.following;
-                                                    var publicRepos = response.public_repos;
-                                                    var blogUrl = response.blog;
-                                                    var starCount = 0;
-                                                    $("#profileImage").attr("src", profilePic);
-                                                    $("#profileName").html('<strong>' + profileName + '</strong>');
-                                                    $("#profileUserName").html(profileUserName);
-                                                    $("#bio").html(bio);
-                                                    $("#company").html(company);
-                                                    $("#location").html(location);
-                                                    $("#email").html(email);
-                                                    $("#blog").html(blogUrl);
-                                                    $('#repoCount').html(publicRepos);
-                                                    
-                                                    
-                                                    $("#followersCount").html(followers);
-                                                    $("#followingCount").html(following);
+    function ajaxCall(url, type, dataType, data) {
+        var responseData = {};
+        $.ajax({
+            url: url,
+            type: type,
+            dataType: dataType,
+            async: false,
+            data: data,
+//            headers: {
+//                "Authorization": "Bearer f078c9b2e53422a3695f253cdd3bad126cb78b53"
+//            },
+            success: function (responseJson) {
+                responseData = responseJson;
+            }
+        });
+        return responseData;
+    }
+    function loadProfileData() {
+        var loadedUserName = "dwivedinamrata";
+        var url = "https://api.github.com/users/" + loadedUserName;
+        var data = "";
+        var response = ajaxCall(url, "GET", "json", data);
+        console.log(response);
+        if (response) {
+            var profilePic = response.avatar_url;
+            var profileName = (response.name) ? response.name : "";
+            var profileUserName = response.login;
+            var bio = response.bio;
+            var company = response.company;
+            var location = response.location;
+            var email = response.email;
+            var followers = response.followers;
+            var following = response.following;
+            var publicRepos = response.public_repos;
+            var blogUrl = response.blog;
+            var starCount = 0;
+            $("#profileImage").attr("src", profilePic);
+            $("#profileName").html('<strong>' + profileName + '</strong>');
+            $("#profileUserName").html(profileUserName);
+            $("#bio").html(bio);
+            $("#company").html(company);
+            $("#location").html(location);
+            $("#email").html(email);
+            $("#blog").html(blogUrl);
+            $('#repoCount').html(publicRepos);
 
 
-                                                    var repos_url = response.repos_url;
-                                                    var projectUrl = "https://api.github.com/users/dheerajtiwari/projects";
-                                                    var starredUrl = "https://api.github.com/users/dheerajtiwari/starred";
+            $("#followersCount").html(followers);
+            $("#followingCount").html(following);
 
 
-                                                    var repoResponse = ajaxCall(repos_url, "GET", "json", "");
-                                                    var projectResponse = ajaxCall(projectUrl, "GET", "json", "");
-                                                    var starredResponse = ajaxCall(starredUrl, "GET", "json", "");
-                                                    
-                                                    console.log(projectResponse);
-                                                    console.log(starredResponse);
-                                                    starCount = starredResponse.length;
-
-                                                    //console.log(repoResponse);
-                                                    //console.log(starredResponse);
-
-                                                    var repoCount = Object.keys(repoResponse).length;
-                                                    var projectCount = Object.keys(projectResponse).length;
-                                                    $("#projectCount").html(projectCount);
-                                                    $("#starCount").html(starCount);
-                                                    
-                                                    console.log(repoCount);
-                                                    var repoHtml = "";
-                                                    if (repoCount) {
-                                                        $.each(repoResponse, function (srNo, repoData) {
-                                                            //console.log(repoData);
-                                                            var repoName = repoData.name;
-                                                            var language = (repoData.language) ? repoData.language:"";
-                                                            var description = (repoData.description) ? repoData.description:"";
-                                                            var stargazers_url = repoData.stargazers_url;
-
-                                                            repoHtml += '<div class="col-sm-6">\
-                                                    <div class="border"><span class="iconify" data-icon="octicon-repo" data-inline="false"></span><b class="link-col">'+repoName+'</b><span class="pull-right"><i class="fas fa-bars"></i></span><p>'+description+'</p>\
-                                                        <p class="mb-0 f6 text-gray">\
-                                                            <span class="d-inline-block mr-3">\
-                                                                <span class="repo-language-color" style="background-color: #dc3545"></span>\
-                                                                <span itemprop="programmingLanguage">'+language+'</span>\
-                                                            </span>\
-                                                        </p>\
-                                                    </div>\
-                                                </div>'
-                                                        });
-
-                                                    }
-                                                    $('#repoDataDiv').html(repoHtml);
+            var repos_url = response.repos_url;
+            var projectUrl = "https://api.github.com/users/" + loadedUserName + "/projects";
+            var starredUrl = "https://api.github.com/users/" + loadedUserName + "/starred";
 
 
+            var repoResponse = ajaxCall(repos_url, "GET", "json", "");
+            var projectResponse = ajaxCall(projectUrl, "GET", "json", "");
+            var starredResponse = ajaxCall(starredUrl, "GET", "json", "");
+            var starCount = starredResponse.length;
+            var repoCount = Object.keys(repoResponse).length;
+            var projectCount = Object.keys(projectResponse).length;
+            $("#projectCount").html(projectCount);
+            $("#starCount").html(starCount);
+            var repoHtml = "";
+            if (repoCount) {
+                $.each(repoResponse, function (srNo, repoData) {
+                    var repoName = repoData.name;
+                    var language = (repoData.language) ? repoData.language : "";
+                    var description = (repoData.description) ? repoData.description : "";
+                    var stargazers_url = repoData.stargazers_url;
 
-                                                }
-
-                                            }
-                                        </script>
+                    repoHtml += '<div class="col-sm-6">\
+            <div class="border"><span class="iconify" data-icon="octicon-repo" data-inline="false"></span><b class="link-col">' + repoName + '</b><span class="pull-right"><i class="fas fa-bars"></i></span><p>' + description + '</p>\
+                <p class="mb-0 f6 text-gray">\
+                    <span class="d-inline-block mr-3">\
+                        <span class="repo-language-color" style="background-color: #dc3545"></span>\
+                        <span itemprop="programmingLanguage">' + language + '</span>\
+                    </span>\
+                </p>\
+            </div>\
+        </div>';
+                });
+            }
+            $('#repoDataDiv').html(repoHtml);
+        }
+    }
+</script>
 
