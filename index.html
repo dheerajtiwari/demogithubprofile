@@ -1,21 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-        
-        <script src="https://code.iconify.design/1/1.0.2/iconify.min.js"></script>
-        
-       
-        
-       
-        
-        
-        
-       
         <title>My Profile</title>
         <meta charset="utf-8">
     	<meta name="viewport" content="width=device-width, initial-scale=1">
 	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+		<script src="https://code.iconify.design/1/1.0.2/iconify.min.js"></script>
 	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 	   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
@@ -27,7 +17,7 @@
 
     	<div class="main">
     		<div class="header">
-    			<nav style="background: #24292e" class="navbar navbar-expand-md navbar-dark">
+    			<nav style="background: #24292e ;height: 58px;"  class="navbar navbar-expand-md navbar-dark">
 					
 				  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
 				    <span class="navbar-toggler-icon"></span>
@@ -55,6 +45,17 @@
 				        <a class="nav-link" href="#">Explore</a>
 				      </li>    
 				    </ul>
+					<ul class="navbar-nav  ml-auto">
+					  <li class="nav-item">
+						<a class="nav-link" href="#"><i class="fa fa-bell"></i></a>
+					  </li>
+					  <li class="nav-item">
+						<a class="nav-link" href="#"><i class="fa fa-plus" aria-hidden="true"></i></a>
+					  </li>
+					  <li class="nav-item">
+						<a class="nav-link" href="#"><img id="profileImageNav" style="border-radius:10px;" width="20"></a>
+					  </li>    
+					</ul>
 				  </div>  
 				</nav>
     		</div>
@@ -97,27 +98,28 @@
 
     				<div class="nav-menu mt-3 mb-4">
 
-						<ul class="nav hr-line">	
+						 <ul class="nav nav-tabs hr-line">	
 		                    <li class="nav-item">
-		                        <a class="nav-link active" href="#" ><b>Overview</b></a>
+		                        <a class="nav-link active" onclick="getData('overview')" data-toggle="tab" href="#overview" > Overview </a>
 		                    </li>
 		                    <li class="nav-item">
-		                        <a class="nav-link" href="#">Repositiries <span class="Counter hide-lg hide-md hide-sm" id="repoCount"></span></a></a>
+		                        <a class="nav-link" onclick="getData('repos')" data-toggle="tab" href="#home">Repositiries <span class="Counter hide-lg hide-md hide-sm" id="repoCount"></span></a></a>
 
 		                    </li>
 		                    <li class="nav-item">
-		                        <a class="nav-link" href="#">Project <span class="Counter hide-lg hide-md hide-sm" id="projectCount"></span></a></a>
+		                        <a class="nav-link" onclick="getData('project')" data-toggle="tab" href="#home">Project <span class="Counter hide-lg hide-md hide-sm" id="projectCount"></span></a></a>
 		                    </li>
 		                    <li class="nav-item">
-		                        <a class="nav-link" href="#">Stars <span class="Counter hide-lg hide-md hide-sm" id="starCount"></span></a></a>
+		                        <a class="nav-link" onclick="getData('stars')" data-toggle="tab" href="#home">Stars <span class="Counter hide-lg hide-md hide-sm" id="starCount"></span></a></a>
 		                    </li>
 		                    <li class="nav-item">
-		                        <a class="nav-link" href="#">Followers <span class="Counter hide-lg hide-md hide-sm" id="followersCount"></span></a></a>
+		                        <a class="nav-link" onclick="getData('follow')" data-toggle="tab" href="#home">Followers <span class="Counter hide-lg hide-md hide-sm" id="followersCount"></span></a></a>
 		                    </li>
 		                    <li class="nav-item">
-		                        <a class="nav-link" href="#">Following <span class="Counter hide-lg hide-md hide-sm" id="followingCount"></span></a></a>
-		                    </li>
-                    	</ul>
+		                        <a class="nav-link" onclick="getData('following')" data-toggle="tab" href="#home">Following <span class="Counter hide-lg hide-md hide-sm" id="followingCount"></span></a></a>
+		                    </li> 
+                    	</ul> 
+						
                     </div>
 
         
@@ -144,10 +146,10 @@
                                         </html>
                                         <script type="text/javascript">
     $(document).ready(function () {
-        loadProfileData();
+      loadProfileData();
     });
-
-    function ajaxCall(url, type, dataType, data) {
+	
+	 function ajaxCall(url, type, dataType, data) {
         var responseData = {};
         $.ajax({
             url: url,
@@ -164,12 +166,65 @@
         });
         return responseData;
     }
+	
+	
+	var repoResponse;
+	var projectResponse;
+	var starredResponse;
+	var repoHtml = "";
+	function getData(data) {
+		repoHtml = "";
+		if(data == 'repos' || data == 'overview') {
+			repoResponse = ajaxCall(response.repos_url, "GET", "json", "")
+			if (repoResponse.length > 0) {
+                $.each(repoResponse, function (srNo, repoData) {
+                    var repoName = repoData.name;
+                    var language = (repoData.language) ? repoData.language : "";
+                    var description = (repoData.description) ? repoData.description : "";
+                    var stargazers_url = repoData.stargazers_url;
+
+                    repoHtml += '<div class="col-sm-6">\
+            <div class="border"><span class="iconify" data-icon="octicon-repo" data-inline="false"></span><a class="repo-link" href="#">' + repoName+ '</a><i  class="fa size-col" style="cursor:grab;">&#xf0c9;</i><p>' + description + '</p>\
+                <p class="mb-0 f6 text-gray">\
+                    <span class="d-inline-block mr-3">\
+                        <span class="repo-language-color" style="background-color: #dc3545"></span>\
+                        <span itemprop="programmingLanguage">' + language + '</span>\
+                    </span>\
+                </p>\
+            </div>\
+        </div>';
+                });
+            }
+			
+		} else if (data == 'project') {
+			var projectUrl = url + "/projects/#list-user-projects";
+			projectResponse = ajaxCall(projectUrl, "GET", "json", "");
+			repoHtml = 'Project Tab';
+		} else if (data == 'stars') {
+			var starredUrl = url + "/starred";
+			starredResponse = ajaxCall(starredUrl, "GET", "json", "");
+			repoHtml = 'Star Tab';
+		} else if (data == 'follow') {
+			repoResponse = ajaxCall(response.followers_url, "GET", "json", "");
+			repoHtml = 'Followers Tab';	
+		}	else if (data == 'following') {
+			repoResponse = ajaxCall(response.following_url, "GET", "json", "");
+			repoHtml = 'Following Tab';
+		}
+		$('#repoDataDiv').html(repoHtml);
+	}
+
+   
+	var response;
+	var loadedUserName;
+	var url;
+	var data;
     function loadProfileData() {
-        var loadedUserName = "dheerajtiwari";
-        var url = "https://api.github.com/users/" + loadedUserName;
-        var data = "";
-        var response = ajaxCall(url, "GET", "json", data);
-        console.log(response);
+        loadedUserName = "dheerajtiwari";
+        url = "https://api.github.com/users/" + loadedUserName;
+        data = "";
+        response = ajaxCall(url, "GET", "json", data);
+		console.log(response);
         if (response) {
             var profilePic = response.avatar_url;
             var profileName = (response.name) ? response.name : "";
@@ -184,6 +239,7 @@
             var blogUrl = response.blog;
             var starCount = 0;
             $("#profileImage").attr("src", profilePic);
+			$("#profileImageNav").attr("src", profilePic);
             $("#profileName").html('<strong>' + profileName + '</strong>');
             $("#profileUserName").html(profileUserName);
             $("#bio").html(bio);
@@ -192,46 +248,16 @@
             $("#email").html(email);
             $("#blog").html(blogUrl);
             $('#repoCount').html(publicRepos);
-
-
             $("#followersCount").html(followers);
             $("#followingCount").html(following);
-
-
-            var repos_url = response.repos_url;
-            var projectUrl = "https://api.github.com/users/" + loadedUserName + "/projects";
-            var starredUrl = "https://api.github.com/users/" + loadedUserName + "/starred";
-
-
-            var repoResponse = ajaxCall(repos_url, "GET", "json", "");
-            var projectResponse = ajaxCall(projectUrl, "GET", "json", "");
-            var starredResponse = ajaxCall(starredUrl, "GET", "json", "");
+	
+			getData('stars');
+			<!-- getData('projects'); -->
+			getData('overview')
             var starCount = starredResponse.length;
-            var repoCount = Object.keys(repoResponse).length;
-            var projectCount = Object.keys(projectResponse).length;
+            var projectCount = 0;
             $("#projectCount").html(projectCount);
             $("#starCount").html(starCount);
-            var repoHtml = "";
-            if (repoCount) {
-                $.each(repoResponse, function (srNo, repoData) {
-                    var repoName = repoData.name;
-                    var language = (repoData.language) ? repoData.language : "";
-                    var description = (repoData.description) ? repoData.description : "";
-                    var stargazers_url = repoData.stargazers_url;
-
-                    repoHtml += '<div class="col-sm-6">\
-            <div class="border"><span class="iconify" data-icon="octicon-repo" data-inline="false"></span><b class="link-col">' + repoName + '</b><i  class="fa size-col">&#xf0c9;</i><p>' + description + '</p>\
-                <p class="mb-0 f6 text-gray">\
-                    <span class="d-inline-block mr-3">\
-                        <span class="repo-language-color" style="background-color: #dc3545"></span>\
-                        <span itemprop="programmingLanguage">' + language + '</span>\
-                    </span>\
-                </p>\
-            </div>\
-        </div>';
-                });
-            }
-            $('#repoDataDiv').html(repoHtml);
         }
     }
 </script>

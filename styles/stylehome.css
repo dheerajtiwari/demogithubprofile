@@ -33,6 +33,8 @@
 }
 .text-gray {
     color: #586069!important;
+	position: absolute;
+    bottom: 15px;
 }
 .sectionnew{
 	width:50%;
@@ -42,12 +44,27 @@
     width: 50%;
   
 }
+.repo-link {
+	color: #0366d6;
+	 font-weight: 600!important;
+}
+
 a {
-    color: #202223;
-    text-decoration: none;
+	color: #202223;
+}
+a.active {
+    border-bottom: 3px solid red !important;
+	color: #202223;
+	font-weight: bold;
+}
+.nav-link.active {
+	border: none;
+}
+.nav-tabs .nav-link:hover {
+	border: none;
 }
 .maintain-top{
-margin-top:20px;
+	margin-top:20px;
 }
 [class^="icon"] {
     width: 15px;
